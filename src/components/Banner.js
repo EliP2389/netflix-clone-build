@@ -1,7 +1,19 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import './Banner.css';
+import axios from '../axios';
+import requests from '../Requests';
 
 function Banner() {
+
+const [movie, setMovie] = useState([]);
+
+// responsible for fetching the movies
+useEffect(() => {
+    async function fecthData() {
+
+    }
+})
+
     // n represents number of characters
     function truncate(string, n) {
         // if string not present we use the '?' to protect incase string is undefined
