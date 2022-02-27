@@ -19,10 +19,11 @@ useEffect (() => {
 }, []);
 
     return (
-        <div className='nav nav_black'>
+        // show (only show if nav_black is true)
+        <div className={`nav  ${show && 'nav_black'}`}>
             <div className='nav_content'>
                 <img className='nav_logo'
-                    src='https://assets.brand.microsites.netflix.io/assets/7dc497e2-4975-11ec-a9ce-066b49664af6_cm_1440w.jpg?v=5'
+                    src='https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR2PjRijJmpbMo1hzrKIyZ5VV_KINQSqQ7wvDMK4gyaNl1t8pP1DNQHFAQJwKGdezy20II&usqp=CAU'
                     alt=''
                 />
 
