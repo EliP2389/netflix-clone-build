@@ -4,15 +4,24 @@ import axios from '../axios';
 import requests from '../Requests';
 
 function Banner() {
+    const [movie, setMovie] = useState([]);
 
-const [movie, setMovie] = useState([]);
-
-// responsible for fetching the movies
-useEffect(() => {
-    async function fecthData() {
-
-    }
-})
+    // responsible for fetching the movie that shows on the banner
+    useEffect(() => {
+        async function fecthData() {
+            const request = await axios.get(requests.fetchNetflixOriginals);
+            setMovie(
+                // sets movie
+                request.data.results[
+                // generates a random number from 0 to the length of the results that come back
+                Math.floor(Math.random() * request.data.results.length - 1)
+                ]
+            );
+            return request;
+        }
+        fecthData();
+    }, []);
+    console.log(movie);
 
     // n represents number of characters
     function truncate(string, n) {
@@ -25,24 +34,20 @@ useEffect(() => {
         <header className='banner'
             style={{
                 backgroundSize: 'cover',
-                backgroundImage: `url(https://upload.wikimedia.org/wikipedia/commons/thumb/c/cd/Black_flag.svg/1200px-Black_flag.svg.png)`,
+                // backdrop_path coming from api call
+                backgroundImage: `url('https://image.tmdb.org/t/p/original/${movie?.backdrop_path}')`,
                 backgroundPosition: "center center"
             }}
         >
             <div className='banner_contents'>
-                <h1 className='banner_title'>Movie Name</h1>
+                <h1 className='banner_title'>{(`${movie?.name}`)}</h1>
                 <div className='banner_buttons'>
                     <button className='banner_button'>Play</button>
                     <button className='banner_button'>My List</button>
                 </div>
-                
-                <h1 className='banner_description'>{truncate(`This is a test description
-                    This is a test descriptionThis is a test descriptionThis is a test description
-                    This is a test descriptionThis is a test descriptionThis is a test description
-                    This is a test descriptionThis is a test descriptionThis is a test description
-                    This is a test descriptionThis is a test descriptionThis is a test description
-                    This is a test descriptionThis is a test descriptionThis is a test description`, 150)}
-                    </h1>
+
+                <h1 className='banner_description'>{truncate(`${movie?.overview}`, 150)}
+                </h1>
 
             </div>
 
