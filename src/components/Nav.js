@@ -23,13 +23,13 @@ useEffect (() => {
         <div className={`nav  ${show && 'nav_black'}`}>
             <div className='nav_content'>
                 <img className='nav_logo'
-                    src='https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR2PjRijJmpbMo1hzrKIyZ5VV_KINQSqQ7wvDMK4gyaNl1t8pP1DNQHFAQJwKGdezy20II&usqp=CAU'
-                    alt=''
+                    src="https://thereelbits.com/wp-content/uploads/2017/05/Netflix-Logo.jpg"
+                    alt='netflix logo'
                 />
 
                 <img className='nav_avatar'
                     src='https://mir-s3-cdn-cf.behance.net/project_modules/disp/1bdc9a33850498.56ba69ac2ba5b.png'
-                    alt=''
+                    alt='netflix avatar'
                 />
             </div>
         </div>
