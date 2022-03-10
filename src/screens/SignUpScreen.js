@@ -9,6 +9,11 @@ export default function SignUpScreen() {
         <input placeholder='Email' type='email' />
         <input placeholder='Password' type='password' />
         <button type='submit'>Sign In</button>
+
+        <h4>
+          <span className='signUpScreen_gray'>New to Netflix? </span>
+          <span className='signUpScreen_link'>Sign Up now</span>
+        </h4>
       </form>
     </div>
   )
